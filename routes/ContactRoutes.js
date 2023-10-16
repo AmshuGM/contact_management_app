@@ -7,8 +7,10 @@ const {getContact,
     postContacts,
     putContacts,
     deleteContacts
-} = require("../controller/userController");
+} = require("../controller/contactController");
+const validateToken = require("../middleware/validateTokenHnadler");
 
+router.use(validateToken);
 router.route("/").get(getContacts).post(postContacts);
 
 router.route("/:id").get(getContact).put(putContacts).delete(deleteContacts);

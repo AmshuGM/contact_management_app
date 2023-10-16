@@ -11,6 +11,7 @@ connectDB();
 app.use(express.json()); 
 
 app.use('/',require("./routes/ContactRoutes"));
+app.use('/user',require("./routes/userRoutes"));
 // for the same reasons the error handler should be after the route
 app.use(errorHandler);
 
